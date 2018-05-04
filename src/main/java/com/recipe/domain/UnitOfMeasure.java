@@ -16,6 +16,13 @@ public class UnitOfMeasure {
 	@Lob
 	private String description;
 
+	public UnitOfMeasure() {
+	}
+	
+	public UnitOfMeasure(String description) {
+		this.description = description;
+	}
+
 	public long getId() {
 		return id;
 	}
