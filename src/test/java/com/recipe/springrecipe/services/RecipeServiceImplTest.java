@@ -1,6 +1,9 @@
 package com.recipe.springrecipe.services;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -12,13 +15,12 @@ import org.mockito.MockitoAnnotations;
 
 import com.recipe.domain.Recipe;
 import com.recipe.repositories.RecipeRepository;
+import com.recipe.services.RecipeService;
 import com.recipe.services.RecipeServiceImpl;
-
-import static org.mockito.Mockito.*;
 
 public class RecipeServiceImplTest {
 
-	RecipeServiceImpl recipeService;
+	RecipeService recipeService;
 	
 	@Mock
 	RecipeRepository recipeRepository;
