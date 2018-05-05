@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -20,6 +22,9 @@ import com.recipe.repositories.CategoryRepository;
 import com.recipe.repositories.RecipeRepository;
 import com.recipe.repositories.UnitOfMeasureRepository;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Component
 public class RecipeBootStrap implements ApplicationListener<ContextRefreshedEvent> {
 
@@ -36,12 +41,16 @@ public class RecipeBootStrap implements ApplicationListener<ContextRefreshedEven
 	}
 
 	@Override
+	@Transactional
 	public void onApplicationEvent(ContextRefreshedEvent arg0) {
 		recipeRepository.saveAll(getRecipes());
+		log.debug("Loading Bootstrap Data");
 	}
 
 	private List<Recipe> getRecipes() {
 
+		log.debug("inside RecipeBootStrap, getRecipes()");
+		
 		List<Recipe> recipes = new ArrayList<>(2);
 
 		// get UOMs
