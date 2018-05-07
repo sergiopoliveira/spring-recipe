@@ -1,4 +1,4 @@
-package converters;
+package com.recipe.converters;
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.lang.Nullable;

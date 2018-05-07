@@ -12,14 +12,13 @@ import com.recipe.commands.CategoryCommand;
 import com.recipe.commands.IngredientCommand;
 import com.recipe.commands.NotesCommand;
 import com.recipe.commands.RecipeCommand;
+import com.recipe.converters.CategoryCommandToCategory;
+import com.recipe.converters.IngredientCommandToIngredient;
+import com.recipe.converters.NotesCommandToNotes;
+import com.recipe.converters.RecipeCommandToRecipe;
+import com.recipe.converters.UnitOfMeasureCommandToUnitOfMeasure;
 import com.recipe.domain.Difficulty;
 import com.recipe.domain.Recipe;
-
-import converters.CategoryCommandToCategory;
-import converters.IngredientCommandToIngredient;
-import converters.NotesCommandToNotes;
-import converters.RecipeCommandToRecipe;
-import converters.UnitOfMeasureCommandToUnitOfMeasure;
 
 public class RecipeCommandToRecipeTest {
     public static final Long RECIPE_ID = 1L;

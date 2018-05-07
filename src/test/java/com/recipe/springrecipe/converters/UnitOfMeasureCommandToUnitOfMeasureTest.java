@@ -9,12 +9,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.recipe.commands.UnitOfMeasureCommand;
+import com.recipe.converters.UnitOfMeasureCommandToUnitOfMeasure;
 import com.recipe.domain.UnitOfMeasure;
 
-import converters.UnitOfMeasureCommandToUnitOfMeasure;
-
-import static org.junit.Assert.*;
-import static org.junit.Assert.*;
 
 public class UnitOfMeasureCommandToUnitOfMeasureTest {
 

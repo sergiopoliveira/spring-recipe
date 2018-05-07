@@ -4,9 +4,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.recipe.commands.CategoryCommand;
+import com.recipe.converters.CategoryToCategoryCommand;
 import com.recipe.domain.Category;
-
-import converters.CategoryToCategoryCommand;
 
 import static org.junit.Assert.*;
 

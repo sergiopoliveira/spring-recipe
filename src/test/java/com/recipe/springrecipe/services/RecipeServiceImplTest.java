@@ -17,13 +17,12 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import com.recipe.converters.RecipeCommandToRecipe;
+import com.recipe.converters.RecipeToRecipeCommand;
 import com.recipe.domain.Recipe;
 import com.recipe.repositories.RecipeRepository;
 import com.recipe.services.RecipeService;
 import com.recipe.services.RecipeServiceImpl;
-
-import converters.RecipeCommandToRecipe;
-import converters.RecipeToRecipeCommand;
 
 public class RecipeServiceImplTest {
 

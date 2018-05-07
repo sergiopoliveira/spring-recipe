@@ -12,11 +12,10 @@ import org.junit.Test;
 
 import com.recipe.commands.IngredientCommand;
 import com.recipe.commands.UnitOfMeasureCommand;
+import com.recipe.converters.IngredientCommandToIngredient;
+import com.recipe.converters.UnitOfMeasureCommandToUnitOfMeasure;
 import com.recipe.domain.Ingredient;
 import com.recipe.domain.Recipe;
-
-import converters.IngredientCommandToIngredient;
-import converters.UnitOfMeasureCommandToUnitOfMeasure;
 
 public class IngredientCommandToIngredientTest {
 

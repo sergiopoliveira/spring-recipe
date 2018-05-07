@@ -4,9 +4,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.recipe.commands.UnitOfMeasureCommand;
+import com.recipe.converters.UnitOfMeasureToUnitOfMeasureCommand;
 import com.recipe.domain.UnitOfMeasure;
-
-import converters.UnitOfMeasureToUnitOfMeasureCommand;
 
 import static org.junit.Assert.*;
 

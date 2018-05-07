@@ -9,11 +9,11 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.recipe.commands.RecipeCommand;
+import com.recipe.converters.RecipeCommandToRecipe;
+import com.recipe.converters.RecipeToRecipeCommand;
 import com.recipe.domain.Recipe;
 import com.recipe.repositories.RecipeRepository;
 
-import converters.RecipeCommandToRecipe;
-import converters.RecipeToRecipeCommand;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

@@ -8,9 +8,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.recipe.commands.NotesCommand;
+import com.recipe.converters.NotesToNotesCommand;
 import com.recipe.domain.Notes;
-
-import converters.NotesToNotesCommand;
 
 
 public class NotesToNotesCommandTest {

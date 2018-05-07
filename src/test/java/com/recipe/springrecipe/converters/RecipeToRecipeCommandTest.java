@@ -9,17 +9,16 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.recipe.commands.RecipeCommand;
+import com.recipe.converters.CategoryToCategoryCommand;
+import com.recipe.converters.IngredientToIngredientCommand;
+import com.recipe.converters.NotesToNotesCommand;
+import com.recipe.converters.RecipeToRecipeCommand;
+import com.recipe.converters.UnitOfMeasureToUnitOfMeasureCommand;
 import com.recipe.domain.Category;
 import com.recipe.domain.Difficulty;
 import com.recipe.domain.Ingredient;
 import com.recipe.domain.Notes;
 import com.recipe.domain.Recipe;
-
-import converters.CategoryToCategoryCommand;
-import converters.IngredientToIngredientCommand;
-import converters.NotesToNotesCommand;
-import converters.RecipeToRecipeCommand;
-import converters.UnitOfMeasureToUnitOfMeasureCommand;
 
 public class RecipeToRecipeCommandTest {
 
