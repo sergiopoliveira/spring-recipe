@@ -14,15 +14,6 @@ public class UnitOfMeasure {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-
-	@Lob
+	private long id;	
 	private String description;
-
-	public UnitOfMeasure() {
-	}
-	
-	public UnitOfMeasure(String description) {
-		this.description = description;
-	}
 }
