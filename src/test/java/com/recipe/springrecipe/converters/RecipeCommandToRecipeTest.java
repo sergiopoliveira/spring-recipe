@@ -9,7 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.recipe.commands.CategoryCommand;
-import com.recipe.commands.IngredientCommand;
+import com.recipe.commands.IngredientsCommand;
 import com.recipe.commands.NotesCommand;
 import com.recipe.commands.RecipeCommand;
 import com.recipe.converters.CategoryCommandToCategory;
@@ -84,10 +84,10 @@ public class RecipeCommandToRecipeTest {
         recipeCommand.getCategories().add(category);
         recipeCommand.getCategories().add(category2);
 
-        IngredientCommand ingredient = new IngredientCommand();
+        IngredientsCommand ingredient = new IngredientsCommand();
         ingredient.setId(INGRED_ID_1);
 
-        IngredientCommand ingredient2 = new IngredientCommand();
+        IngredientsCommand ingredient2 = new IngredientsCommand();
         ingredient2.setId(INGRED_ID_2);
 
         recipeCommand.getIngredients().add(ingredient);

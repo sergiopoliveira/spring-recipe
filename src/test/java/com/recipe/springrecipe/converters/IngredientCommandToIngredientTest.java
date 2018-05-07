@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.recipe.commands.IngredientCommand;
+import com.recipe.commands.IngredientsCommand;
 import com.recipe.commands.UnitOfMeasureCommand;
 import com.recipe.converters.IngredientCommandToIngredient;
 import com.recipe.converters.UnitOfMeasureCommandToUnitOfMeasure;
@@ -39,19 +39,19 @@ public class IngredientCommandToIngredientTest {
 
     @Test
     public void testEmptyObject() throws Exception {
-        assertNotNull(converter.convert(new IngredientCommand()));
+        assertNotNull(converter.convert(new IngredientsCommand()));
     }
 
     @Test
     public void convert() throws Exception {
         //given
-        IngredientCommand command = new IngredientCommand();
+        IngredientsCommand command = new IngredientsCommand();
         command.setId(ID_VALUE);
         command.setAmount(AMOUNT);
         command.setDescription(DESCRIPTION);
         UnitOfMeasureCommand unitOfMeasureCommand = new UnitOfMeasureCommand();
         unitOfMeasureCommand.setId(UOM_ID);
-        command.setUnitOfMeasure(unitOfMeasureCommand);
+        command.setUom(unitOfMeasureCommand);
 
         //when
         Ingredient ingredient = converter.convert(command);
@@ -68,7 +68,7 @@ public class IngredientCommandToIngredientTest {
     @Test
     public void convertWithNullUOM() throws Exception {
         //given
-        IngredientCommand command = new IngredientCommand();
+        IngredientsCommand command = new IngredientsCommand();
         command.setId(ID_VALUE);
         command.setAmount(AMOUNT);
         command.setDescription(DESCRIPTION);

@@ -4,13 +4,13 @@ import org.springframework.core.convert.converter.Converter;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 
-import com.recipe.commands.IngredientCommand;
+import com.recipe.commands.IngredientsCommand;
 import com.recipe.domain.Ingredient;
 
 import lombok.Synchronized;
 
 @Component
-public class IngredientToIngredientCommand implements Converter<Ingredient, IngredientCommand> {
+public class IngredientToIngredientCommand implements Converter<Ingredient, IngredientsCommand> {
 
     private final UnitOfMeasureToUnitOfMeasureCommand uomConverter;
 
@@ -21,16 +21,16 @@ public class IngredientToIngredientCommand implements Converter<Ingredient, Ingr
     @Synchronized
     @Nullable
     @Override
-    public IngredientCommand convert(Ingredient ingredient) {
+    public IngredientsCommand convert(Ingredient ingredient) {
         if (ingredient == null) {
             return null;
         }
 
-        IngredientCommand ingredientCommand = new IngredientCommand();
+        IngredientsCommand ingredientCommand = new IngredientsCommand();
         ingredientCommand.setId(ingredient.getId());
         ingredientCommand.setAmount(ingredient.getAmount());
         ingredientCommand.setDescription(ingredient.getDescription());
-        ingredientCommand.setUnitOfMeasure(uomConverter.convert(ingredient.getUom()));
+        ingredientCommand.setUom(uomConverter.convert(ingredient.getUom()));
         return ingredientCommand;
     }
 }

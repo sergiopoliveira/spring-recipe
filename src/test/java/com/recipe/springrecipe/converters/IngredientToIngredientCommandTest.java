@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.recipe.commands.IngredientCommand;
+import com.recipe.commands.IngredientsCommand;
 import com.recipe.converters.IngredientToIngredientCommand;
 import com.recipe.converters.UnitOfMeasureToUnitOfMeasureCommand;
 import com.recipe.domain.Ingredient;
@@ -52,9 +52,9 @@ public class IngredientToIngredientCommandTest {
         ingredient.setDescription(DESCRIPTION);
         ingredient.setUom(null);
         //when
-        IngredientCommand ingredientCommand = converter.convert(ingredient);
+        IngredientsCommand ingredientCommand = converter.convert(ingredient);
         //then
-        assertNull(ingredientCommand.getUnitOfMeasure());
+        assertNull(ingredientCommand.getUom());
         assertEquals(ID_VALUE, ingredientCommand.getId());
        // assertEquals(RECIPE, ingredientCommand.get);
         assertEquals(AMOUNT, ingredientCommand.getAmount());
@@ -75,11 +75,11 @@ public class IngredientToIngredientCommandTest {
 
         ingredient.setUom(uom);
         //when
-        IngredientCommand ingredientCommand = converter.convert(ingredient);
+        IngredientsCommand ingredientCommand = converter.convert(ingredient);
         //then
         assertEquals(ID_VALUE, ingredientCommand.getId());
-        assertNotNull(ingredientCommand.getUnitOfMeasure());
-        assertEquals(UOM_ID, ingredientCommand.getUnitOfMeasure().getId());
+        assertNotNull(ingredientCommand.getUom());
+        assertEquals(UOM_ID, ingredientCommand.getUom().getId());
         // assertEquals(RECIPE, ingredientCommand.get);
         assertEquals(AMOUNT, ingredientCommand.getAmount());
         assertEquals(DESCRIPTION, ingredientCommand.getDescription());
