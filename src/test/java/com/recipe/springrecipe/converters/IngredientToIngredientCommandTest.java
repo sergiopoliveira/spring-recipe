@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.recipe.commands.IngredientsCommand;
+import com.recipe.commands.IngredientCommand;
 import com.recipe.converters.IngredientToIngredientCommand;
 import com.recipe.converters.UnitOfMeasureToUnitOfMeasureCommand;
 import com.recipe.domain.Ingredient;
@@ -52,7 +52,7 @@ public class IngredientToIngredientCommandTest {
         ingredient.setDescription(DESCRIPTION);
         ingredient.setUom(null);
         //when
-        IngredientsCommand ingredientCommand = converter.convert(ingredient);
+        IngredientCommand ingredientCommand = converter.convert(ingredient);
         //then
         assertNull(ingredientCommand.getUom());
         assertEquals(ID_VALUE, ingredientCommand.getId());
@@ -75,7 +75,7 @@ public class IngredientToIngredientCommandTest {
 
         ingredient.setUom(uom);
         //when
-        IngredientsCommand ingredientCommand = converter.convert(ingredient);
+        IngredientCommand ingredientCommand = converter.convert(ingredient);
         //then
         assertEquals(ID_VALUE, ingredientCommand.getId());
         assertNotNull(ingredientCommand.getUom());

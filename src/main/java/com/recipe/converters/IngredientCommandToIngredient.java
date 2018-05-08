@@ -4,11 +4,11 @@ import org.springframework.core.convert.converter.Converter;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 
-import com.recipe.commands.IngredientsCommand;
+import com.recipe.commands.IngredientCommand;
 import com.recipe.domain.Ingredient;
 
 @Component
-public class IngredientCommandToIngredient implements Converter<IngredientsCommand, Ingredient> {
+public class IngredientCommandToIngredient implements Converter<IngredientCommand, Ingredient> {
 
     private final UnitOfMeasureCommandToUnitOfMeasure uomConverter;
 
@@ -18,7 +18,7 @@ public class IngredientCommandToIngredient implements Converter<IngredientsComma
 
     @Nullable
     @Override
-    public Ingredient convert(IngredientsCommand source) {
+    public Ingredient convert(IngredientCommand source) {
         if (source == null) {
             return null;
         }
