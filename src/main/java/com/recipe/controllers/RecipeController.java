@@ -1,5 +1,7 @@
 package com.recipe.controllers;
 
+import java.text.NumberFormat;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -77,6 +79,21 @@ public class RecipeController {
 		ModelAndView modelAndView = new ModelAndView();
 		
 		modelAndView.setViewName("404error");
+		modelAndView.addObject("e", e);
+		
+		return modelAndView;
+	}
+	
+	@ResponseStatus(HttpStatus.BAD_REQUEST)
+	@ExceptionHandler(NumberFormatException.class)
+	public ModelAndView handleNumberFormat(Exception e) {
+		
+		log.error("Handling number format exception");
+		log.error(e.getMessage());
+		
+		ModelAndView modelAndView = new ModelAndView();
+		
+		modelAndView.setViewName("400error");
 		modelAndView.addObject("e", e);
 		
 		return modelAndView;
