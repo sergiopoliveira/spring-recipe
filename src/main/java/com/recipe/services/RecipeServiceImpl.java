@@ -12,6 +12,7 @@ import com.recipe.commands.RecipeCommand;
 import com.recipe.converters.RecipeCommandToRecipe;
 import com.recipe.converters.RecipeToRecipeCommand;
 import com.recipe.domain.Recipe;
+import com.recipe.exceptions.NotFoundException;
 import com.recipe.repositories.RecipeRepository;
 
 import lombok.extern.slf4j.Slf4j;
@@ -45,7 +46,8 @@ public class RecipeServiceImpl implements RecipeService {
         Optional<Recipe> recipeOptional = recipeRepository.findById(l);
 
         if (!recipeOptional.isPresent()) {
-            throw new RuntimeException("Recipe Not Found!");
+        //	throw new RuntimeException("Recipe Not Found!");
+        	throw new NotFoundException("Recipe Not Found!");
         }
 
         return recipeOptional.get();
