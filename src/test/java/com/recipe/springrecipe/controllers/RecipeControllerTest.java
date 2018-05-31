@@ -20,6 +20,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import com.recipe.commands.RecipeCommand;
+import com.recipe.controllers.ControllerExceptionHandler;
 import com.recipe.controllers.RecipeController;
 import com.recipe.domain.Recipe;
 import com.recipe.exceptions.NotFoundException;
@@ -39,7 +40,9 @@ public class RecipeControllerTest {
         MockitoAnnotations.initMocks(this);
 
         controller = new RecipeController(recipeService);
-        mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
+        mockMvc = MockMvcBuilders.standaloneSetup(controller)
+        		.setControllerAdvice(new ControllerExceptionHandler())
+        		.build();
     }
 
     @Test
