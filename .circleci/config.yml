@@ -22,11 +22,6 @@ jobs:
 
     steps:
       - checkout
-      
-      # pre-dependencies for code-cov
-       - run:
-          name: pre-dependencies
-          command: sudo pip install codecov
 
       # Download and cache dependencies
       - restore_cache:
@@ -48,6 +43,4 @@ jobs:
       - store_test_results:
           path: target/surefire-reports
 
-      - run:
-          name: Send to CodeCov
-          command: codecov
+      - run: sudo bash <(curl -s https://codecov.io/bash)
